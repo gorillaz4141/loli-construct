@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Package } from "lucide-react"
 import { ServicePageLayout } from "@/components/services/service-page-layout"
 
 export const metadata: Metadata = {
@@ -125,7 +124,7 @@ export default function AccesoriiAcoperis() {
       subtitle="Produse Premium"
       description="Gamă completă de accesorii pentru finisarea și funcționalitatea perfectă a acoperișului. Produse de calitate germană și montaj profesional."
       heroImage="/placeholder.svg?height=800&width=1920"
-      icon={Package}
+      icon="Package"
       features={features}
       benefits={benefits}
       process={process}

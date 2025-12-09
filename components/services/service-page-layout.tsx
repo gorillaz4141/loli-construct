@@ -2,9 +2,17 @@
 
 import type React from "react"
 import { useEffect, useRef, useState } from "react"
-import { Phone, Mail, CheckCircle, ArrowRight } from "lucide-react"
+import { Phone, Mail, CheckCircle, ArrowRight, Package, Hammer, Wrench, Building2 } from "lucide-react"
 import { GTMButton } from "@/components/ui/gtm-button"
 import type { LucideIcon } from "lucide-react"
+
+// Icon mapping - maps string names to icon components
+const iconMap: Record<string, LucideIcon> = {
+  Package,
+  Hammer,
+  Wrench,
+  Building2,
+}
 
 interface ServiceFeature {
   title: string
@@ -16,7 +24,7 @@ interface ServicePageLayoutProps {
   subtitle: string
   description: string
   heroImage: string
-  icon: LucideIcon
+  icon: string // Changed from LucideIcon to string
   features: ServiceFeature[]
   benefits: string[]
   process: { step: number; title: string; description: string }[]
@@ -29,7 +37,7 @@ export function ServicePageLayout({
   subtitle,
   description,
   heroImage,
-  icon: Icon,
+  icon: iconName,
   features,
   benefits,
   process,
@@ -38,6 +46,9 @@ export function ServicePageLayout({
 }: ServicePageLayoutProps) {
   const [isHeroVisible, setIsHeroVisible] = useState(false)
   const heroRef = useRef<HTMLElement>(null)
+
+  // Get the icon component from the mapping
+  const Icon = iconMap[iconName] || Package // Default to Package if icon not found
 
   useEffect(() => {
     setIsHeroVisible(true)

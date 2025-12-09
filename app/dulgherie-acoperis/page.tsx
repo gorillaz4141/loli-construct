@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Building2 } from "lucide-react"
 import { ServicePageLayout } from "@/components/services/service-page-layout"
 
 export const metadata: Metadata = {
@@ -124,7 +123,7 @@ export default function DulgherieAcoperis() {
       subtitle="Structuri din Lemn"
       description="Construim șarpante și structuri din lemn de cea mai înaltă calitate. Meșteri dulgheri cu experiență vastă în proiecte rezidențiale și comerciale."
       heroImage="/placeholder.svg?height=800&width=1920"
-      icon={Building2}
+      icon="Building2"
       features={features}
       benefits={benefits}
       process={process}

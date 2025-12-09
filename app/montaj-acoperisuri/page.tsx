@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Hammer } from "lucide-react"
 import { ServicePageLayout } from "@/components/services/service-page-layout"
 
 export const metadata: Metadata = {
@@ -127,7 +126,7 @@ export default function MontajAcoperisuri() {
       subtitle="Servicii de Instalare"
       description="Montăm acoperișuri noi cu materiale premium și tehnici moderne, garantând durabilitate și estetică superioară. Experiență dobândită în Germania și Austria."
       heroImage="/placeholder.svg?height=800&width=1920"
-      icon={Hammer}
+      icon="Hammer"
       features={features}
       benefits={benefits}
       process={process}

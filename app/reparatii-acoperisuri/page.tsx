@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import { Wrench } from "lucide-react"
 import { ServicePageLayout } from "@/components/services/service-page-layout"
 
 export const metadata: Metadata = {
@@ -99,7 +98,7 @@ export default function ReparatiiAcoperisuri() {
       subtitle="Intervenții Urgente 24/7"
       description="Rezolvăm rapid orice problemă a acoperișului: infiltrații, țigle sparte, defecțiuni jgheaburi. Echipă pregătită pentru intervenții de urgență, disponibilă non-stop."
       heroImage="/placeholder.svg?height=800&width=1920"
-      icon={Wrench}
+      icon="Wrench"
       features={features}
       benefits={benefits}
       process={process}
