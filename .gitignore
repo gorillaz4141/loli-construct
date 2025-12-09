@@ -4,10 +4,10 @@ node_modules/
 .pnp.js
 .yarn/install-state.gz
 
-# Package manager lockfiles (uncomment the ones you're NOT using)
-# package-lock.json  # Uncomment if using yarn or pnpm
-# yarn.lock          # Uncomment if using npm or pnpm
-# pnpm-lock.yaml     # Uncomment if using npm or yarn
+# Package manager lockfiles (using npm, so ignore others)
+# package-lock.json  # Keep this - we're using npm
+# yarn.lock          # Ignore if using npm
+pnpm-lock.yaml       # Ignore - we're using npm, not pnpm
 
 # Testing
 /coverage
