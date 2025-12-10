@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Menu, X, Phone } from "lucide-react"
-import { GTMLink } from "@/components/ui/gtm-link"
-import { GTMButton } from "@/components/ui/gtm-button"
-import { cn } from "@/lib/utils"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Menu, X, Phone } from "lucide-react";
+import { GTMLink } from "@/components/ui/gtm-link";
+import { GTMButton } from "@/components/ui/gtm-button";
+import { cn } from "@/lib/utils";
 
 const navigation = [
   { name: "Acasă", href: "/" },
@@ -15,60 +15,41 @@ const navigation = [
   { name: "Dulgherie Acoperiș", href: "/dulgherie-acoperis" },
   { name: "Accesorii Acoperiș", href: "/accesorii-acoperis" },
   { name: "Lucrări", href: "/lucrari" },
-]
+];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    setMounted(true); // For SSR hydration mismatch fixes that cause icon glitches
+  }, []);
 
   return (
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent",
+        "bg-[#e5e5e5]"
       )}
     >
-      {/* Top bar */}
-      <div className="bg-[#242f40] text-white py-2 px-4">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-2">
-            <Phone className="w-4 h-4 text-[#cca43b]" />
-            <a
-              href="tel:+40759614930"
-              className="hover:text-[#cca43b] transition-colors"
-              data-gtm-event="click"
-              data-gtm-category="Contact"
-              data-gtm-action="phone_click"
-              data-gtm-label="header_phone"
-            >
-              +40 759 614 930
-            </a>
-            <span className="hidden sm:inline text-[#cca43b] mx-2">|</span>
-            <span className="hidden sm:inline">Disponibili 24/7</span>
-          </div>
-          <div className="hidden md:block text-[#e5e5e5]">Timișoara și 100km rază</div>
-        </div>
-      </div>
-
-      {/* Main nav */}
-      <nav className="max-w-7xl mx-auto px-4 py-3">
+      {/* Main nav (no top bar per new style) */}
+      <nav className="max-w-7xl mx-auto px-4 py-2">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
-            <div className="relative w-12 h-12">
-              <Image src="/logo.png" alt="Acoperiș la Gata Logo" fill className="object-contain" priority />
+            <div className="hidden sm:block lg:block">
+              <span className="text-black font-serif text-xl font-bold">
+                Acoperiș la Gata
+              </span>
+              <p className="text-xs text-black/80">
+                Servicii Complete Acoperișuri
+              </p>
             </div>
-            <div className="hidden sm:block">
-              <span className="text-[#242f40] font-serif text-xl font-bold">Acoperiș la Gata</span>
-              <p className="text-xs text-[#363636]">Servicii Complete Acoperișuri</p>
+            {/* Show site name on mobile only (below lg) */}
+            <div className="block sm:hidden lg:hidden">
+              <span className="text-black font-serif text-lg font-bold">
+                Acoperiș la Gata
+              </span>
             </div>
           </Link>
 
@@ -81,7 +62,7 @@ export function Header() {
                 gtmLabel={item.name}
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
-                  "text-[#242f40] hover:underline underline-offset-4",
+                  "text-black hover:underline underline-offset-4"
                 )}
               >
                 {item.name}
@@ -93,7 +74,7 @@ export function Header() {
           <div className="hidden lg:block">
             <GTMButton
               gtmLabel="header_cta_contact"
-              className="bg-gradient-to-r from-[#cca43b] to-[#d4b55a] hover:from-[#b8922f] hover:to-[#cca43b] text-white px-6 py-2 rounded-md shadow-md hover:shadow-lg transition-all duration-300"
+              className="bg-[#d1d5db] text-black px-6 py-2 rounded-md shadow hover:shadow-md transition-all duration-300"
               asChild
             >
               <a href="tel:+40759614930">Solicită Ofertă</a>
@@ -101,41 +82,55 @@ export function Header() {
           </div>
 
           {/* Mobile menu button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-md text-[#242f40] hover:bg-[#e5e5e5] transition-colors"
-            aria-label="Toggle menu"
-            data-gtm-event="click"
-            data-gtm-category="Navigation"
-            data-gtm-action="mobile_menu_toggle"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {mounted && (
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="lg:hidden p-2 rounded-md text-black hover:bg-black/10 transition-colors"
+              aria-label="Toggle menu"
+              data-gtm-event="click"
+              data-gtm-category="Navigation"
+              data-gtm-action="mobile_menu_toggle"
+            >
+              {isOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          )}
         </div>
 
         {/* Mobile Navigation */}
         <div
           className={cn(
             "lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0",
+            isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
           )}
         >
-          <div className="bg-white rounded-lg shadow-lg border border-[#e5e5e5] p-4 space-y-2">
+          <div className="bg-[#e5e5e5] rounded-lg shadow-lg border border-[#d1d5db] p-4 space-y-2">
+            {/* Visible brand/header for mobile menu */}
+            <div className="flex items-center justify-center mb-2">
+              <Link href="/" onClick={() => setIsOpen(false)}>
+                <span className="block text-black font-serif text-lg font-bold">
+                  Acoperiș la Gata
+                </span>
+              </Link>
+            </div>
             {navigation.map((item) => (
               <GTMLink
                 key={item.name}
                 href={item.href}
                 gtmLabel={`mobile_${item.name}`}
-                className="block px-4 py-3 text-[#242f40] hover:underline underline-offset-4 rounded-md transition-colors"
+                className="block px-4 py-3 text-black hover:underline underline-offset-4 rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </GTMLink>
             ))}
-            <div className="pt-4 border-t border-[#e5e5e5]">
+            <div className="pt-4 border-t border-[#d1d5db]">
               <GTMButton
                 gtmLabel="mobile_cta_contact"
-                className="w-full bg-gradient-to-r from-[#cca43b] to-[#d4b55a] hover:from-[#b8922f] hover:to-[#cca43b] text-white"
+                className="w-full bg-[#d1d5db] text-black"
                 asChild
               >
                 <a href="tel:+40759614930">Sună Acum: +40 759 614 930</a>
@@ -145,5 +140,5 @@ export function Header() {
         </div>
       </nav>
     </header>
-  )
+  );
 }
