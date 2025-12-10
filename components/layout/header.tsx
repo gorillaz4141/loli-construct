@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { GTMLink } from "@/components/ui/gtm-link";
 import { GTMButton } from "@/components/ui/gtm-button";
 import { cn } from "@/lib/utils";
@@ -22,22 +21,47 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true); // For SSR hydration mismatch fixes that cause icon glitches
+    setMounted(true);
   }, []);
 
+  // Close menu when clicking outside or on a link
+  useEffect(() => {
+    if (isOpen) {
+      const handleClickOutside = (event: MouseEvent) => {
+        const target = event.target as HTMLElement;
+        if (!target.closest("nav")) {
+          setIsOpen(false);
+        }
+      };
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, [isOpen]);
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
   return (
-    <header
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        "bg-[#e5e5e5]"
-      )}
-    >
-      {/* Main nav (no top bar per new style) */}
-      <nav className="max-w-7xl mx-auto px-4 py-2">
-        <div className="flex items-center justify-between">
+    <header className="sticky top-0 left-0 right-0 z-50 bg-[#e5e5e5] shadow-sm">
+      <nav className="max-w-7xl mx-auto px-4">
+        {/* Main Navigation Bar */}
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="hidden sm:block lg:block">
+          <Link
+            href="/"
+            className="flex items-center gap-3"
+            onClick={() => setIsOpen(false)}
+          >
+            <div className="hidden sm:block">
               <span className="text-black font-serif text-xl font-bold">
                 Acoperiș la Gata
               </span>
@@ -45,8 +69,7 @@ export function Header() {
                 Servicii Complete Acoperișuri
               </p>
             </div>
-            {/* Show site name on mobile only (below lg) */}
-            <div className="block sm:hidden lg:hidden">
+            <div className="block sm:hidden">
               <span className="text-black font-serif text-lg font-bold">
                 Acoperiș la Gata
               </span>
@@ -60,17 +83,14 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 gtmLabel={item.name}
-                className={cn(
-                  "px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
-                  "text-black hover:underline underline-offset-4"
-                )}
+                className="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 text-black hover:underline underline-offset-4"
               >
                 {item.name}
               </GTMLink>
             ))}
           </div>
 
-          {/* CTA Button */}
+          {/* Desktop CTA Button */}
           <div className="hidden lg:block">
             <GTMButton
               gtmLabel="header_cta_contact"
@@ -81,12 +101,16 @@ export function Header() {
             </GTMButton>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Button */}
           {mounted && (
             <button
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(!isOpen);
+              }}
               className="lg:hidden p-2 rounded-md text-black hover:bg-black/10 transition-colors"
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
               data-gtm-event="click"
               data-gtm-category="Navigation"
               data-gtm-action="mobile_menu_toggle"
@@ -100,37 +124,49 @@ export function Header() {
           )}
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="lg:hidden fixed inset-0 top-[60px] bg-[#e5e5e5] z-40 overflow-y-auto">
-            <div className="max-w-7xl mx-auto px-4 py-6 space-y-2 pb-8">
-              {/* Visible brand/header for mobile menu */}
-              <div className="flex items-center justify-center mb-4">
-                <Link href="/" onClick={() => setIsOpen(false)}>
-                  <span className="block text-black font-serif text-xl font-bold">
-                    Acoperiș la Gata
-                  </span>
-                </Link>
-              </div>
-              {navigation.map((item) => (
-                <GTMLink
-                  key={item.name}
-                  href={item.href}
-                  gtmLabel={`mobile_${item.name}`}
-                  className="block px-4 py-4 text-black hover:underline underline-offset-4 rounded-md transition-colors text-base font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </GTMLink>
-              ))}
-              <div className="pt-6 border-t border-[#d1d5db] mt-4">
-                <GTMButton
-                  gtmLabel="mobile_cta_contact"
-                  className="w-full bg-[#d1d5db] text-black py-4 text-base font-medium"
-                  asChild
-                >
-                  <a href="tel:+40759614930">Sună Acum: +40 759 614 930</a>
-                </GTMButton>
+        {/* Mobile Navigation Menu - Full Screen Overlay */}
+        {isOpen && mounted && (
+          <div
+            className="lg:hidden fixed inset-0 top-16 bg-[#e5e5e5] z-40 overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="max-w-7xl mx-auto px-4 py-6 min-h-[calc(100vh-4rem)] flex flex-col">
+              {/* Mobile Menu Content */}
+              <div className="flex-1 space-y-1">
+                {/* Brand Header */}
+                <div className="flex items-center justify-center mb-6 pb-4 border-b border-[#d1d5db]">
+                  <Link href="/" onClick={() => setIsOpen(false)}>
+                    <span className="text-black font-serif text-xl font-bold">
+                      Acoperiș la Gata
+                    </span>
+                  </Link>
+                </div>
+
+                {/* Navigation Links */}
+                {navigation.map((item) => (
+                  <GTMLink
+                    key={item.name}
+                    href={item.href}
+                    gtmLabel={`mobile_${item.name}`}
+                    className="block px-4 py-4 text-black hover:bg-black/5 rounded-md transition-colors text-base font-medium"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </GTMLink>
+                ))}
+
+                {/* CTA Button */}
+                <div className="pt-6 mt-6 border-t border-[#d1d5db]">
+                  <GTMButton
+                    gtmLabel="mobile_cta_contact"
+                    className="w-full bg-[#d1d5db] text-black py-4 text-base font-medium"
+                    asChild
+                  >
+                    <a href="tel:+40759614930" onClick={() => setIsOpen(false)}>
+                      Sună Acum: +40 759 614 930
+                    </a>
+                  </GTMButton>
+                </div>
               </div>
             </div>
           </div>
