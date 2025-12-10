@@ -1,8 +1,9 @@
-import type { Metadata } from "next"
-import { ServicePageLayout } from "@/components/services/service-page-layout"
+import type { Metadata } from "next";
+import { ServicePageLayout } from "@/components/services/service-page-layout";
 
 export const metadata: Metadata = {
-  title: "Montaj Acoperișuri Timișoara - Instalare Profesională | Loli Construct",
+  title:
+    "Montaj Acoperișuri Timișoara - Instalare Profesională | Loli Construct",
   description:
     "Servicii profesionale de montaj acoperișuri în Timișoara și împrejurimi. Țiglă metalică, ceramică, tablă falțuită. Echipă cu experiență Germania/Austria. Garanție 10 ani. Solicită ofertă gratuită!",
   keywords: [
@@ -16,7 +17,8 @@ export const metadata: Metadata = {
     "firma montaj acoperiș",
   ],
   openGraph: {
-    title: "Montaj Acoperișuri Timișoara - Instalare Profesională | Loli Construct",
+    title:
+      "Montaj Acoperișuri Timișoara - Instalare Profesională | Loli Construct",
     description:
       "Servicii profesionale de montaj acoperișuri în Timișoara. Țiglă metalică, ceramică, tablă falțuită. Garanție 10 ani.",
     url: "https://loliconstruct.ro/montaj-acoperisuri",
@@ -25,7 +27,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://loliconstruct.ro/montaj-acoperisuri",
   },
-}
+};
 
 const features = [
   {
@@ -58,7 +60,7 @@ const features = [
     description:
       "Montăm sisteme complete incluzând izolație, barieră de vapori, astriș și toate accesoriile necesare pentru un acoperiș perfect.",
   },
-]
+];
 
 const benefits = [
   "Echipă cu experiență în Germania și Austria, standarde europene de calitate",
@@ -67,57 +69,67 @@ const benefits = [
   "Consultanță gratuită și evaluare la fața locului fără obligații",
   "Respectăm termenele de execuție și bugetul stabilit",
   "Curățenie completă după finalizarea lucrării",
-]
+];
 
 const process = [
   {
     step: 1,
     title: "Consultație",
-    description: "Discutăm nevoile dvs. și facem o evaluare detaliată a proiectului la fața locului.",
+    description:
+      "Discutăm nevoile dvs. și facem o evaluare detaliată a proiectului la fața locului.",
   },
   {
     step: 2,
     title: "Proiectare",
-    description: "Elaborăm un plan detaliat cu specificații tehnice și o ofertă transparentă.",
+    description:
+      "Elaborăm un plan detaliat cu specificații tehnice și o ofertă transparentă.",
   },
   {
     step: 3,
     title: "Execuție",
-    description: "Echipa noastră realizează montajul respectând cele mai înalte standarde de calitate.",
+    description:
+      "Echipa noastră realizează montajul respectând cele mai înalte standarde de calitate.",
   },
   {
     step: 4,
     title: "Predare",
-    description: "Verificăm fiecare detaliu și predăm lucrarea cu toate documentele de garanție.",
+    description:
+      "Verificăm fiecare detaliu și predăm lucrarea cu toate documentele de garanție.",
   },
-]
+];
 
 const materials = [
   {
     name: "Lindab",
-    description: "Țiglă metalică suedeză premium, rezistentă la coroziune și cu finisaj de lungă durată.",
+    description:
+      "Țiglă metalică suedeză premium, rezistentă la coroziune și cu finisaj de lungă durată.",
   },
   {
     name: "Bramac",
-    description: "Țiglă din beton de cea mai înaltă calitate, cu garanție de 30 de ani de la producător.",
+    description:
+      "Țiglă din beton de cea mai înaltă calitate, cu garanție de 30 de ani de la producător.",
   },
   {
     name: "Tondach",
-    description: "Țiglă ceramică tradițională austriacă, perfectă pentru case în stil clasic.",
+    description:
+      "Țiglă ceramică tradițională austriacă, perfectă pentru case în stil clasic.",
   },
   {
     name: "Wetterbest",
-    description: "Tablă pentru acoperiș românească de calitate, cu diverse profile și culori.",
+    description:
+      "Tablă pentru acoperiș românească de calitate, cu diverse profile și culori.",
   },
   {
     name: "Gerard",
-    description: "Țiglă metalică acoperită cu piatră naturală, aspect premium și durabilitate excepțională.",
+    description:
+      "Țiglă metalică acoperită cu piatră naturală, aspect premium și durabilitate excepțională.",
   },
   {
     name: "Tegola",
-    description: "Șindrilă bituminoasă italiană, flexibilă și rezistentă la variații extreme de temperatură.",
+    description:
+      "Șindrilă bituminoasă italiană, flexibilă și rezistentă la variații extreme de temperatură.",
   },
-]
+];
 
 export default function MontajAcoperisuri() {
   return (
@@ -125,12 +137,12 @@ export default function MontajAcoperisuri() {
       title="Montaj Acoperișuri"
       subtitle="Servicii de Instalare"
       description="Montăm acoperișuri noi cu materiale premium și tehnici moderne, garantând durabilitate și estetică superioară. Experiență dobândită în Germania și Austria."
-      heroImage="/placeholder.svg?height=800&width=1920"
+      heroImage="/reno-acop-02.jpeg"
       icon="Hammer"
       features={features}
       benefits={benefits}
       process={process}
       materials={materials}
     />
-  )
+  );
 }

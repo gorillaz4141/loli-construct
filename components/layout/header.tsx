@@ -81,7 +81,7 @@ export function Header() {
                 gtmLabel={item.name}
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-md transition-all duration-200",
-                  "text-[#363636] hover:text-[#cca43b] hover:bg-[#e5e5e5]/50",
+                  "text-[#242f40] hover:underline underline-offset-4",
                 )}
               >
                 {item.name}
@@ -126,7 +126,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 gtmLabel={`mobile_${item.name}`}
-                className="block px-4 py-3 text-[#363636] hover:text-[#cca43b] hover:bg-[#e5e5e5]/50 rounded-md transition-colors"
+                className="block px-4 py-3 text-[#242f40] hover:underline underline-offset-4 rounded-md transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {item.name}

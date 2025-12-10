@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { useEffect, useRef, useState } from "react"
-import { Shield, Award, Clock, Users, CheckCircle, Wrench } from "lucide-react"
+import { useEffect, useRef, useState } from "react";
+import { Shield, Award, Clock, Users, CheckCircle, Wrench } from "lucide-react";
 
 const reasons = [
   {
@@ -40,38 +40,42 @@ const reasons = [
     description:
       "Investim constant în echipamente și tehnologii moderne pentru rezultate impecabile și termene respectate.",
   },
-]
+];
 
 export function WhyChooseUs() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsVisible(true)
+          setIsVisible(true);
         }
       },
-      { threshold: 0.2 },
-    )
+      { threshold: 0.2 }
+    );
 
     if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+      observer.observe(sectionRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section ref={sectionRef} className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left - Image */}
-          <div className={`relative ${isVisible ? "animate-slide-in-left" : "opacity-0"}`}>
+          <div
+            className={`relative ${
+              isVisible ? "animate-slide-in-left" : "opacity-0"
+            }`}
+          >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="/placeholder.svg?height=600&width=800"
+                src="/fronton-3.jpeg"
                 alt="Echipa Loli Construct la lucru"
                 className="w-full h-[500px] object-cover"
               />
@@ -84,8 +88,12 @@ export function WhyChooseUs() {
                   <Award className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <p className="text-2xl font-serif font-bold text-[#242f40]">15+ Ani</p>
-                  <p className="text-[#363636] text-sm">Experiență în domeniu</p>
+                  <p className="text-2xl font-serif font-bold text-[#242f40]">
+                    15+ Ani
+                  </p>
+                  <p className="text-[#363636] text-sm">
+                    Experiență în domeniu
+                  </p>
                 </div>
               </div>
             </div>
@@ -94,8 +102,12 @@ export function WhyChooseUs() {
           </div>
 
           {/* Right - Content */}
-          <div className={`${isVisible ? "animate-slide-in-right" : "opacity-0"}`}>
-            <span className="text-[#cca43b] text-sm font-semibold tracking-wider uppercase">De Ce Noi?</span>
+          <div
+            className={`${isVisible ? "animate-slide-in-right" : "opacity-0"}`}
+          >
+            <span className="text-[#cca43b] text-sm font-semibold tracking-wider uppercase">
+              De Ce Noi?
+            </span>
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#242f40] mt-4 mb-6">
               Excelență și{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#cca43b] to-[#b8922f]">
@@ -104,23 +116,32 @@ export function WhyChooseUs() {
               la Fiecare Proiect
             </h2>
             <p className="text-[#363636] leading-relaxed mb-8">
-              Cu o experiență dobândită în țări cu cele mai ridicate standarde în construcții, aducem în România
-              servicii de acoperiș care rivalizează cu cele din Germania și Austria. Fiecare proiect este tratat cu
-              aceeași atenție la detalii și dedicare.
+              Cu o experiență dobândită în țări cu cele mai ridicate standarde
+              în construcții, aducem în România servicii de acoperiș care
+              rivalizează cu cele din Germania și Austria. Fiecare proiect este
+              tratat cu aceeași atenție la detalii și dedicare.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">
               {reasons.map((reason, index) => (
                 <div
                   key={reason.title}
-                  className={`flex gap-4 ${isVisible ? `animate-fade-in-up stagger-${index + 1}` : "opacity-0"}`}
+                  className={`flex gap-4 ${
+                    isVisible
+                      ? `animate-fade-in-up stagger-${index + 1}`
+                      : "opacity-0"
+                  }`}
                 >
                   <div className="w-12 h-12 rounded-xl bg-[#e5e5e5] flex items-center justify-center flex-shrink-0 group-hover:bg-[#cca43b]/20 transition-colors">
                     <reason.icon className="w-6 h-6 text-[#cca43b]" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-[#242f40] mb-1">{reason.title}</h3>
-                    <p className="text-sm text-[#363636]">{reason.description}</p>
+                    <h3 className="font-semibold text-[#242f40] mb-1">
+                      {reason.title}
+                    </h3>
+                    <p className="text-sm text-[#363636]">
+                      {reason.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -129,5 +150,5 @@ export function WhyChooseUs() {
         </div>
       </div>
     </section>
-  )
+  );
 }
