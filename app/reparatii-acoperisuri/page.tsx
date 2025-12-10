@@ -3,7 +3,7 @@ import { ServicePageLayout } from "@/components/services/service-page-layout";
 
 export const metadata: Metadata = {
   title:
-    "Reparații Acoperișuri Timișoara - Servicii Urgente 24/7 | Loli Construct",
+    "Reparații Acoperișuri Timișoara - Servicii Urgente 24/7 | Acoperiș la Gata",
   description:
     "Reparații acoperișuri în Timișoara și împrejurimi. Infiltrații, țigle sparte, probleme jgheaburi. Intervenții urgente 24/7. Echipă profesionistă. Solicită evaluare gratuită!",
   keywords: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Reparații Acoperișuri Timișoara - Servicii Urgente 24/7 | Loli Construct",
+      "Reparații Acoperișuri Timișoara - Servicii Urgente 24/7 | Acoperiș la Gata",
     description:
       "Reparații acoperișuri în Timișoara. Infiltrații, țigle sparte, probleme jgheaburi. Intervenții urgente 24/7.",
-    url: "https://loliconstruct.ro/reparatii-acoperisuri",
+    url: "https://acoperislagata.ro/reparatii-acoperisuri",
     type: "website",
   },
   alternates: {
-    canonical: "https://loliconstruct.ro/reparatii-acoperisuri",
+    canonical: "https://acoperislagata.ro/reparatii-acoperisuri",
   },
 };
 

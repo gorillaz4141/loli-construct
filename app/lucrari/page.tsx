@@ -5,7 +5,7 @@ import { GTMButton } from "@/components/ui/gtm-button";
 
 export const metadata: Metadata = {
   title:
-    "Lucrări Realizate - Portofoliu Acoperișuri | Loli Construct Timișoara",
+    "Lucrări Realizate - Portofoliu Acoperișuri | Acoperiș la Gata Timișoara",
   description:
     "Vizualizați proiectele noastre de montaj și reparații acoperișuri în Timișoara și împrejurimi. Galerie foto cu lucrări înainte, pe parcurs și rezultate finale.",
   keywords: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Lucrări Realizate - Portofoliu Acoperișuri | Loli Construct Timișoara",
+      "Lucrări Realizate - Portofoliu Acoperișuri | Acoperiș la Gata Timișoara",
     description:
       "Vizualizați proiectele noastre de montaj și reparații acoperișuri. Galerie foto cu înainte și după.",
-    url: "https://loliconstruct.ro/lucrari",
+    url: "https://acoperislagata.ro/lucrari",
     type: "website",
   },
   alternates: {
-    canonical: "https://loliconstruct.ro/lucrari",
+    canonical: "https://acoperislagata.ro/lucrari",
   },
 };
 
@@ -63,12 +63,12 @@ const projects = [
 
     images: [
       {
-        src: "/reno-acop-01.jpeg",
+        src: "/reno-acop-02.jpeg",
         alt: "Pod neutilizat",
         label: "Înainte",
       },
       {
-        src: "/reno-acop-02.jpeg",
+        src: "/reno-acop-01.jpeg",
         alt: "Structură șarpantă",
         label: "Pe Parcursul Lucrării",
       },

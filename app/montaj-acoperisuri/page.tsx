@@ -3,7 +3,7 @@ import { ServicePageLayout } from "@/components/services/service-page-layout";
 
 export const metadata: Metadata = {
   title:
-    "Montaj Acoperișuri Timișoara - Instalare Profesională | Loli Construct",
+    "Montaj Acoperișuri Timișoara - Instalare Profesională | Acoperiș la Gata",
   description:
     "Servicii profesionale de montaj acoperișuri în Timișoara și împrejurimi. Țiglă metalică, ceramică, tablă falțuită. Echipă cu experiență Germania/Austria. Garanție 10 ani. Solicită ofertă gratuită!",
   keywords: [
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Montaj Acoperișuri Timișoara - Instalare Profesională | Loli Construct",
+      "Montaj Acoperișuri Timișoara - Instalare Profesională | Acoperiș la Gata",
     description:
       "Servicii profesionale de montaj acoperișuri în Timișoara. Țiglă metalică, ceramică, tablă falțuită. Garanție 10 ani.",
-    url: "https://loliconstruct.ro/montaj-acoperisuri",
+    url: "https://acoperislagata.ro/montaj-acoperisuri",
     type: "website",
   },
   alternates: {
-    canonical: "https://loliconstruct.ro/montaj-acoperisuri",
+    canonical: "https://acoperislagata.ro/montaj-acoperisuri",
   },
 };
 

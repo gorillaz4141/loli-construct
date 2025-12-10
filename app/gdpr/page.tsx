@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { LegalPageLayout } from "@/components/legal/legal-page-layout"
 
 export const metadata: Metadata = {
-  title: "Politica de Confidențialitate GDPR | Loli Construct",
+  title: "Politica de Confidențialitate GDPR | Acoperiș la Gata",
   description:
-    "Politica de confidențialitate și protecția datelor personale conform GDPR. Află cum Loli Construct colectează și protejează datele tale.",
+    "Politica de confidențialitate și protecția datelor personale conform GDPR. Află cum Acoperiș la Gata colectează și protejează datele tale.",
   robots: {
     index: false,
     follow: true,
@@ -17,7 +17,7 @@ export default function GDPRPage() {
       <h2>1. Introducere</h2>
 
       <p>
-        Loli Construct SRL (denumită în continuare "Compania", "Noi") se angajează să protejeze confidențialitatea
+        Acoperiș la Gata SRL (denumită în continuare "Compania", "Noi") se angajează să protejeze confidențialitatea
         datelor dumneavoastră personale în conformitate cu Regulamentul General privind Protecția Datelor (GDPR) -
         Regulamentul (UE) 2016/679.
       </p>
@@ -32,7 +32,7 @@ export default function GDPRPage() {
       <div className="bg-[#e5e5e5]/50 rounded-xl p-6 not-prose my-6">
         <ul className="space-y-2 text-[#363636]">
           <li>
-            <strong>Denumire:</strong> Loli Construct SRL
+            <strong>Denumire:</strong> Acoperiș la Gata SRL
           </li>
           <li>
             <strong>Sediu:</strong> Timișoara, Timiș, România

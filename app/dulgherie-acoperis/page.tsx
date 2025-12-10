@@ -3,7 +3,7 @@ import { ServicePageLayout } from "@/components/services/service-page-layout";
 
 export const metadata: Metadata = {
   title:
-    "Dulgherie Acoperiș Timișoara - Șarpante și Structuri Lemn | Loli Construct",
+    "Dulgherie Acoperiș Timișoara - Șarpante și Structuri Lemn | Acoperiș la Gata",
   description:
     "Servicii profesionale de dulgherie pentru acoperișuri în Timișoara. Șarpante tradiționale și moderne, mansardări, grinzi. Meșteri cu experiență. Solicită ofertă!",
   keywords: [
@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Dulgherie Acoperiș Timișoara - Șarpante și Structuri Lemn | Loli Construct",
+      "Dulgherie Acoperiș Timișoara - Șarpante și Structuri Lemn | Acoperiș la Gata",
     description:
       "Servicii profesionale de dulgherie pentru acoperișuri. Șarpante tradiționale și moderne, mansardări.",
-    url: "https://loliconstruct.ro/dulgherie-acoperis",
+    url: "https://acoperislagata.ro/dulgherie-acoperis",
     type: "website",
   },
   alternates: {
-    canonical: "https://loliconstruct.ro/dulgherie-acoperis",
+    canonical: "https://acoperislagata.ro/dulgherie-acoperis",
   },
 };
 

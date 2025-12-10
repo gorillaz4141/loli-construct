@@ -87,7 +87,7 @@ export function HeroSection() {
                 gtmLabel="hero_view_projects"
                 gtmCategory="Hero"
                 variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white/30 text-black px-8 py-4 text-lg rounded-lg backdrop-blur-sm transition-all duration-300"
                 asChild
               >
                 <a href="/lucrari">Vezi Lucrările Noastre</a>

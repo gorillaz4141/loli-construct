@@ -176,7 +176,7 @@ export function ServicePageLayout({
             <div className="relative">
               <img
                 src="/placeholder.svg?height=500&width=600"
-                alt={`${title} - Loli Construct`}
+                alt={`${title} - Acoperiș la Gata`}
                 className="rounded-2xl shadow-xl"
               />
               <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-lg p-6">

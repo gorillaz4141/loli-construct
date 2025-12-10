@@ -64,10 +64,10 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <div className="relative w-12 h-12">
-              <Image src="/logo.png" alt="Loli Construct Logo" fill className="object-contain" priority />
+              <Image src="/logo.png" alt="Acoperiș la Gata Logo" fill className="object-contain" priority />
             </div>
             <div className="hidden sm:block">
-              <span className="text-[#242f40] font-serif text-xl font-bold">Loli Construct</span>
+              <span className="text-[#242f40] font-serif text-xl font-bold">Acoperiș la Gata</span>
               <p className="text-xs text-[#363636]">Servicii Complete Acoperișuri</p>
             </div>
           </Link>

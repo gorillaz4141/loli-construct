@@ -3,9 +3,9 @@ import { LegalPageLayout } from "@/components/legal/legal-page-layout"
 import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "ANPC - Protecția Consumatorilor | Loli Construct",
+  title: "ANPC - Protecția Consumatorilor | Acoperiș la Gata",
   description:
-    "Informații despre drepturile consumatorilor și Autoritatea Națională pentru Protecția Consumatorilor. Loli Construct respectă toate reglementările ANPC.",
+    "Informații despre drepturile consumatorilor și Autoritatea Națională pentru Protecția Consumatorilor. Acoperiș la Gata respectă toate reglementările ANPC.",
   robots: {
     index: false,
     follow: true,
@@ -18,7 +18,7 @@ export default function ANPCPage() {
       <h2>Autoritatea Națională pentru Protecția Consumatorilor</h2>
 
       <p>
-        Loli Construct SRL respectă drepturile consumatorilor conform legislației în vigoare din România, inclusiv
+        Acoperiș la Gata SRL respectă drepturile consumatorilor conform legislației în vigoare din România, inclusiv
         prevederile Autorității Naționale pentru Protecția Consumatorilor (ANPC).
       </p>
 
@@ -32,7 +32,7 @@ export default function ANPCPage() {
           serviciile noastre, prețuri, materiale utilizate și termene de execuție.
         </li>
         <li>
-          <strong>Dreptul la calitate</strong> - Toate lucrările executate de Loli Construct respectă standardele de
+          <strong>Dreptul la calitate</strong> - Toate lucrările executate de Acoperiș la Gata respectă standardele de
           calitate și sunt realizate cu materiale certificate.
         </li>
         <li>
@@ -119,7 +119,7 @@ export default function ANPCPage() {
         </ul>
       </div>
 
-      <h3>Procedura de Reclamație la Loli Construct</h3>
+      <h3>Procedura de Reclamație la Acoperiș la Gata</h3>
 
       <p>Înainte de a contacta ANPC, vă încurajăm să ne contactați direct pentru soluționarea oricărei probleme:</p>
 
@@ -148,7 +148,7 @@ export default function ANPCPage() {
       <h3>Angajamentul Nostru</h3>
 
       <p>
-        La Loli Construct, ne angajăm să oferim servicii de cea mai înaltă calitate și să respectăm toate drepturile
+        La Acoperiș la Gata, ne angajăm să oferim servicii de cea mai înaltă calitate și să respectăm toate drepturile
         consumatorilor. Satisfacția clienților noștri este prioritatea numărul unu, iar orice problemă va fi tratată cu
         seriozitate și profesionalism.
       </p>

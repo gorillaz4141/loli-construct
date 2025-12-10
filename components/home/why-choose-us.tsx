@@ -76,7 +76,7 @@ export function WhyChooseUs() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
                 src="/fronton-3.jpeg"
-                alt="Echipa Loli Construct la lucru"
+                alt="Echipa Acoperiș la Gata la lucru"
                 className="w-full h-[500px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#242f40]/40 to-transparent" />

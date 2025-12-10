@@ -1,6 +1,6 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const services = [
   { name: "Montaj Acoperișuri", href: "/montaj-acoperisuri" },
@@ -8,18 +8,27 @@ const services = [
   { name: "Dulgherie Acoperiș", href: "/dulgherie-acoperis" },
   { name: "Accesorii Acoperiș", href: "/accesorii-acoperis" },
   { name: "Lucrări Realizate", href: "/lucrari" },
-]
+];
 
-const serviceAreas = ["Timișoara", "Lugoj", "Arad", "Reșița", "Deva", "Buziaș", "Jimbolia", "Sânnicolau Mare"]
+const serviceAreas = [
+  "Timișoara",
+  "Lugoj",
+  "Arad",
+  "Reșița",
+  "Deva",
+  "Buziaș",
+  "Jimbolia",
+  "Sânnicolau Mare",
+];
 
 const legalLinks = [
   { name: "ANPC", href: "/anpc" },
   { name: "Termeni și Condiții (SOL)", href: "/sol" },
   { name: "Politica GDPR", href: "/gdpr" },
-]
+];
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   return (
     <footer className="bg-gradient-to-b from-[#242f40] to-[#1a222d]">
@@ -30,16 +39,24 @@ export function Footer() {
           <div className="space-y-6">
             <div className="flex items-center gap-3">
               <div className="relative w-12 h-12 bg-white rounded-lg p-1">
-                <Image src="/logo.png" alt="Loli Construct Logo" fill className="object-contain" />
+                <Image
+                  src="/logo.png"
+                  alt="Acoperiș la Gata Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
               <div>
-                <h3 className="text-white font-serif text-xl font-bold">Loli Construct</h3>
+                <h3 className="text-white font-serif text-xl font-bold">
+                  Acoperiș la Gata
+                </h3>
                 <p className="text-[#cca43b] text-sm">Servicii Complete</p>
               </div>
             </div>
             <p className="text-[#e5e5e5] text-sm leading-relaxed">
-              Oferim servicii profesionale de montaj și reparații acoperișuri cu standarde germane de calitate.
-              Experiență în proiecte rezidențiale și industriale în Germania, Austria și România.
+              Oferim servicii profesionale de montaj și reparații acoperișuri cu
+              standarde germane de calitate. Experiență în proiecte rezidențiale
+              și industriale în Germania, Austria și România.
             </p>
             <div className="flex items-center gap-2 text-[#cca43b]">
               <Clock className="w-4 h-4" />
@@ -79,13 +96,18 @@ export function Footer() {
             </h4>
             <ul className="grid grid-cols-2 gap-2">
               {serviceAreas.map((area) => (
-                <li key={area} className="text-[#e5e5e5] text-sm flex items-center gap-1">
+                <li
+                  key={area}
+                  className="text-[#e5e5e5] text-sm flex items-center gap-1"
+                >
                   <MapPin className="w-3 h-3 text-[#cca43b]" />
                   {area}
                 </li>
               ))}
             </ul>
-            <p className="text-[#cca43b] text-sm mt-4">+ 100km rază Timișoara</p>
+            <p className="text-[#cca43b] text-sm mt-4">
+              + 100km rază Timișoara
+            </p>
           </div>
 
           {/* Contact */}
@@ -115,7 +137,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:231321@gmail.com"
+                  href="mailto:Acoperislagata@gmail.com"
                   className="flex items-center gap-3 text-[#e5e5e5] hover:text-[#cca43b] transition-colors group"
                   data-gtm-event="click"
                   data-gtm-category="Contact"
@@ -127,7 +149,7 @@ export function Footer() {
                   </div>
                   <div>
                     <p className="text-xs text-[#e5e5e5]/70">Email</p>
-                    <p className="font-medium">231321@gmail.com</p>
+                    <p className="font-medium">Acoperislagata@gmail.com</p>
                   </div>
                 </a>
               </li>
@@ -150,7 +172,7 @@ export function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[#e5e5e5]/70 text-sm text-center md:text-left">
-              © {currentYear} Loli Construct. Toate drepturile rezervate.
+              © {currentYear} Acoperiș la Gata. Toate drepturile rezervate.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               {legalLinks.map((link) => (
@@ -171,5 +193,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

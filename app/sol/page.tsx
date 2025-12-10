@@ -2,9 +2,9 @@ import type { Metadata } from "next"
 import { LegalPageLayout } from "@/components/legal/legal-page-layout"
 
 export const metadata: Metadata = {
-  title: "Termeni și Condiții (SOL) | Loli Construct",
+  title: "Termeni și Condiții (SOL) | Acoperiș la Gata",
   description:
-    "Termeni și condiții de utilizare pentru serviciile Loli Construct. Informații despre contractare, plăți, garanții și responsabilități.",
+    "Termeni și condiții de utilizare pentru serviciile Acoperiș la Gata. Informații despre contractare, plăți, garanții și responsabilități.",
   robots: {
     index: false,
     follow: true,
@@ -17,7 +17,7 @@ export default function SOLPage() {
       <h2>1. Informații Generale</h2>
 
       <p>
-        Prezentul document stabilește termenii și condițiile de utilizare a serviciilor oferite de Loli Construct SRL
+        Prezentul document stabilește termenii și condițiile de utilizare a serviciilor oferite de Acoperiș la Gata SRL
         (denumită în continuare "Compania", "Noi"), cu sediul în Timișoara, România.
       </p>
 
@@ -28,7 +28,7 @@ export default function SOLPage() {
 
       <h2>2. Serviciile Oferite</h2>
 
-      <p>Loli Construct oferă următoarele categorii de servicii:</p>
+      <p>Acoperiș la Gata oferă următoarele categorii de servicii:</p>
 
       <ul>
         <li>Montaj acoperișuri noi (țiglă metalică, ceramică, tablă, șindrilă)</li>

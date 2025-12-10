@@ -1,4 +1,4 @@
-# Loli Construct - Acoperișuri Timișoara
+# Acoperiș la Gata - Acoperișuri Timișoara
 
 Website profesional pentru servicii de montaj și reparații acoperișuri în Timișoara și împrejurimi.
 
@@ -148,11 +148,11 @@ Creează un fișier `.env.local` pentru variabile de mediu locale:
 
 ## 📝 Licență
 
-Proiect privat - Loli Construct
+Proiect privat - Acoperiș la Gata
 
 ## 👥 Contact
 
 - **Telefon**: +40759614930
 - **Email**: 231321@gmail.com
-- **Website**: https://loliconstruct.ro
+- **Website**: https://acoperislagata.ro
 

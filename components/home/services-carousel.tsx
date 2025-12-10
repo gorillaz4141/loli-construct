@@ -48,7 +48,7 @@ const services = [
   },
   {
     icon: Package,
-    title: "Accesorii Acoperiș",
+    title: "Montaj Sistem Pluvial",
     href: "/accesorii-acoperis",
     description:
       "Gamă completă de accesorii pentru finisarea perfectă a acoperișului. Produse de calitate germană cu garanție extinsă.",

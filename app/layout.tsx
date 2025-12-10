@@ -1,20 +1,24 @@
-import type React from "react"
-import type { Metadata, Viewport } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
-import { CookieConsent } from "@/components/layout/cookie-consent"
-import "./globals.css"
+import type React from "react";
+import type { Metadata, Viewport } from "next";
+import { Inter, Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
+import { CookieConsent } from "@/components/layout/cookie-consent";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://loliconstruct.ro"),
+  metadataBase: new URL("https://acoperislagata.ro"),
   title: {
-    default: "Loli Construct - Montaj și Reparații Acoperișuri Timișoara | Servicii Premium",
-    template: "%s | Loli Construct - Acoperișuri Timișoara",
+    default:
+      "Acoperiș la Gata - Montaj și Reparații Acoperișuri Timișoara | Servicii Premium",
+    template: "%s | Acoperiș la Gata - Acoperișuri Timișoara",
   },
   description:
     "Servicii profesionale de montaj și reparații acoperișuri în Timișoara și împrejurimi. Standarde germane de calitate, echipă experimentată, garanție extinsă. Disponibili 24/7. Solicită ofertă gratuită!",
@@ -30,11 +34,11 @@ export const metadata: Metadata = {
     "renovare acoperiș",
     "construcții acoperișuri",
     "firma acoperișuri Timișoara",
-    "Loli Construct",
+    "Acoperiș la Gata",
   ],
-  authors: [{ name: "Loli Construct" }],
-  creator: "Loli Construct",
-  publisher: "Loli Construct",
+  authors: [{ name: "Acoperiș la Gata" }],
+  creator: "Acoperiș la Gata",
+  publisher: "Acoperiș la Gata",
   robots: {
     index: true,
     follow: true,
@@ -49,9 +53,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ro_RO",
-    url: "https://loliconstruct.ro",
-    siteName: "Loli Construct",
-    title: "Loli Construct - Montaj și Reparații Acoperișuri Timișoara",
+    url: "https://acoperislagata.ro",
+    siteName: "Acoperiș la Gata",
+    title: "Acoperiș la Gata - Montaj și Reparații Acoperișuri Timișoara",
     description:
       "Servicii profesionale de montaj și reparații acoperișuri în Timișoara. Standarde germane, echipă experimentată, garanție extinsă.",
     images: [
@@ -59,25 +63,26 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Loli Construct - Acoperișuri Premium Timișoara",
+        alt: "Acoperiș la Gata - Acoperișuri Premium Timișoara",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Loli Construct - Acoperișuri Premium Timișoara",
-    description: "Servicii profesionale de montaj și reparații acoperișuri în Timișoara și împrejurimi.",
+    title: "Acoperiș la Gata - Acoperișuri Premium Timișoara",
+    description:
+      "Servicii profesionale de montaj și reparații acoperișuri în Timișoara și împrejurimi.",
     images: ["/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://loliconstruct.ro",
+    canonical: "https://acoperislagata.ro",
     languages: {
-      "ro-RO": "https://loliconstruct.ro",
+      "ro-RO": "https://acoperislagata.ro",
     },
   },
   category: "Construcții",
   generator: "v0.app",
-}
+};
 
 export const viewport: Viewport = {
   themeColor: "#242f40",
@@ -85,16 +90,16 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-}
+};
 
 // JSON-LD structured data for local business
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "RoofingContractor",
-  name: "Loli Construct",
-  image: "https://loliconstruct.ro/logo.png",
-  "@id": "https://loliconstruct.ro",
-  url: "https://loliconstruct.ro",
+  name: "Acoperiș la Gata",
+  image: "https://acoperislagata.ro/logo.png",
+  "@id": "https://acoperislagata.ro",
+  url: "https://acoperislagata.ro",
   telephone: "+40759614930",
   email: "231321@gmail.com",
   address: {
@@ -110,7 +115,15 @@ const jsonLd = {
   },
   openingHoursSpecification: {
     "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    dayOfWeek: [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday",
+    ],
     opens: "00:00",
     closes: "23:59",
   },
@@ -125,12 +138,12 @@ const jsonLd = {
   ],
   description:
     "Servicii profesionale de montaj și reparații acoperișuri în Timișoara și împrejurimi. Standarde germane de calitate.",
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="ro">
@@ -149,9 +162,14 @@ export default function RootLayout({
             `,
           }}
         />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body
+        className={`${inter.variable} ${playfair.variable} font-sans antialiased`}
+      >
         {/* GTM noscript placeholder */}
         <noscript>
           {/* <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe> */}
@@ -163,5 +181,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

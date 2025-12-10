@@ -3,7 +3,7 @@ import { ServicePageLayout } from "@/components/services/service-page-layout";
 
 export const metadata: Metadata = {
   title:
-    "Accesorii Acoperiș Timișoara - Jgheaburi, Burlane, Ferestre | Loli Construct",
+    "Accesorii Acoperiș Timișoara - Jgheaburi, Burlane, Ferestre | Acoperiș la Gata",
   description:
     "Gamă completă de accesorii pentru acoperișuri în Timișoara: jgheaburi, burlane, ferestre mansardă, coamă. Produse premium, montaj profesional. Solicită ofertă!",
   keywords: [
@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Accesorii Acoperiș Timișoara - Jgheaburi, Burlane, Ferestre | Loli Construct",
+      "Accesorii Acoperiș Timișoara - Jgheaburi, Burlane, Ferestre | Acoperiș la Gata",
     description:
       "Gamă completă de accesorii pentru acoperișuri: jgheaburi, burlane, ferestre mansardă. Produse premium.",
-    url: "https://loliconstruct.ro/accesorii-acoperis",
+    url: "https://acoperislagata.ro/accesorii-acoperis",
     type: "website",
   },
   alternates: {
-    canonical: "https://loliconstruct.ro/accesorii-acoperis",
+    canonical: "https://acoperislagata.ro/accesorii-acoperis",
   },
 };
 

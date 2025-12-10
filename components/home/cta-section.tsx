@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { Phone, Mail, Clock, ArrowRight } from "lucide-react"
-import { GTMButton } from "@/components/ui/gtm-button"
+import { Phone, Mail, Clock, ArrowRight } from "lucide-react";
+import { GTMButton } from "@/components/ui/gtm-button";
 
 export function CTASection() {
   return (
@@ -21,7 +21,9 @@ export function CTASection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Content */}
           <div className="text-center lg:text-left">
-            <span className="text-[#cca43b] text-sm font-semibold tracking-wider uppercase">Pregătiți să Începem?</span>
+            <span className="text-[#cca43b] text-sm font-semibold tracking-wider uppercase">
+              Pregătiți să Începem?
+            </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white mt-4 mb-6 text-balance">
               Solicitați o{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#cca43b] to-[#d4b55a]">
@@ -30,8 +32,9 @@ export function CTASection() {
               Astăzi
             </h2>
             <p className="text-[#e5e5e5] text-lg leading-relaxed mb-8 max-w-xl">
-              Sunați-ne sau trimiteți un email și vă vom contacta în cel mai scurt timp pentru o evaluare gratuită și o
-              ofertă personalizată proiectului dumneavoastră.
+              Sunați-ne sau trimiteți un email și vă vom contacta în cel mai
+              scurt timp pentru o evaluare gratuită și o ofertă personalizată
+              proiectului dumneavoastră.
             </p>
 
             {/* Contact options */}
@@ -43,7 +46,10 @@ export function CTASection() {
                 className="bg-gradient-to-r from-[#cca43b] to-[#d4b55a] hover:from-[#b8922f] hover:to-[#cca43b] text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 asChild
               >
-                <a href="tel:+40759614930" className="flex items-center justify-center gap-3">
+                <a
+                  href="tel:+40759614930"
+                  className="flex items-center justify-center gap-3"
+                >
                   <Phone className="w-5 h-5" />
                   <span>+40 759 614 930</span>
                 </a>
@@ -53,10 +59,13 @@ export function CTASection() {
                 gtmCategory="CTA Section"
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/30 text-white hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
+                className="border-2 border-white/30 text-black hover:bg-white/10 px-8 py-6 text-lg rounded-xl backdrop-blur-sm transition-all duration-300"
                 asChild
               >
-                <a href="mailto:231321@gmail.com" className="flex items-center justify-center gap-3">
+                <a
+                  href="mailto:acoperislagata@gmail.com"
+                  className="flex items-center justify-center gap-3"
+                >
                   <Mail className="w-5 h-5" />
                   <span>Trimite Email</span>
                 </a>
@@ -66,13 +75,17 @@ export function CTASection() {
             {/* Availability badge */}
             <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 border border-white/20">
               <Clock className="w-5 h-5 text-[#cca43b]" />
-              <span className="text-white">Disponibili 24/7 pentru urgențe</span>
+              <span className="text-white">
+                Disponibili 24/7 pentru urgențe
+              </span>
             </div>
           </div>
 
           {/* Right - Quick benefits */}
           <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
-            <h3 className="text-xl font-serif font-semibold text-white mb-6">Ce Oferim:</h3>
+            <h3 className="text-xl font-serif font-semibold text-white mb-6">
+              Ce Oferim:
+            </h3>
             <ul className="space-y-4">
               {[
                 "Evaluare gratuită la fața locului",
@@ -82,7 +95,10 @@ export function CTASection() {
                 "Termene de execuție respectate",
                 "Curățenie după finalizare",
               ].map((benefit, index) => (
-                <li key={index} className="flex items-center gap-3 text-white/90">
+                <li
+                  key={index}
+                  className="flex items-center gap-3 text-white/90"
+                >
                   <ArrowRight className="w-5 h-5 text-[#cca43b] flex-shrink-0" />
                   <span>{benefit}</span>
                 </li>
@@ -107,5 +123,5 @@ export function CTASection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
