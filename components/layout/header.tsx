@@ -118,12 +118,13 @@ export function Header() {
         {/* Mobile Navigation Menu - Full Screen Overlay */}
         {isOpen && mounted && (
           <div
-            className="lg:hidden fixed inset-0 top-16 bg-[#e5e5e5] z-40 overflow-y-auto"
+            className="lg:hidden fixed inset-0 bg-[#e5e5e5] z-40 overflow-y-auto"
+            style={{ height: "100vh", top: 0 }}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="max-w-7xl mx-auto px-4 py-6 min-h-[calc(100vh-4rem)] flex flex-col">
+            <div className="max-w-7xl mx-auto px-4 py-6 h-full flex flex-col">
               {/* Mobile Menu Content */}
-              <div className="flex-1 space-y-1">
+              <div className="flex-1 space-y-1 flex flex-col">
                 {/* Brand Header */}
                 <div className="flex items-center justify-center mb-6 pb-4 border-b border-[#d1d5db]">
                   <Link href="/" onClick={() => setIsOpen(false)}>
