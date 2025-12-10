@@ -91,15 +91,6 @@ export function Header() {
           </div>
 
           {/* Desktop CTA Button */}
-          <div className="hidden lg:block">
-            <GTMButton
-              gtmLabel="header_cta_contact"
-              className="bg-[#d1d5db] text-black px-6 py-2 rounded-md shadow hover:shadow-md transition-all duration-300"
-              asChild
-            >
-              <a href="tel:+40759614930">Solicită Ofertă</a>
-            </GTMButton>
-          </div>
 
           {/* Mobile Menu Button */}
           {mounted && (
@@ -156,17 +147,6 @@ export function Header() {
                 ))}
 
                 {/* CTA Button */}
-                <div className="pt-6 mt-6 border-t border-[#d1d5db]">
-                  <GTMButton
-                    gtmLabel="mobile_cta_contact"
-                    className="w-full bg-[#d1d5db] text-black py-4 text-base font-medium"
-                    asChild
-                  >
-                    <a href="tel:+40759614930" onClick={() => setIsOpen(false)}>
-                      Sună Acum: +40 759 614 930
-                    </a>
-                  </GTMButton>
-                </div>
               </div>
             </div>
           </div>
