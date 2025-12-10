@@ -101,43 +101,40 @@ export function Header() {
         </div>
 
         {/* Mobile Navigation */}
-        <div
-          className={cn(
-            "lg:hidden overflow-hidden transition-all duration-300 ease-in-out",
-            isOpen ? "max-h-[500px] opacity-100 mt-4" : "max-h-0 opacity-0"
-          )}
-        >
-          <div className="bg-[#e5e5e5] rounded-lg shadow-lg border border-[#d1d5db] p-4 space-y-2">
-            {/* Visible brand/header for mobile menu */}
-            <div className="flex items-center justify-center mb-2">
-              <Link href="/" onClick={() => setIsOpen(false)}>
-                <span className="block text-black font-serif text-lg font-bold">
-                  Acoperiș la Gata
-                </span>
-              </Link>
-            </div>
-            {navigation.map((item) => (
-              <GTMLink
-                key={item.name}
-                href={item.href}
-                gtmLabel={`mobile_${item.name}`}
-                className="block px-4 py-3 text-black hover:underline underline-offset-4 rounded-md transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </GTMLink>
-            ))}
-            <div className="pt-4 border-t border-[#d1d5db]">
-              <GTMButton
-                gtmLabel="mobile_cta_contact"
-                className="w-full bg-[#d1d5db] text-black"
-                asChild
-              >
-                <a href="tel:+40759614930">Sună Acum: +40 759 614 930</a>
-              </GTMButton>
+        {isOpen && (
+          <div className="lg:hidden fixed inset-0 top-[60px] bg-[#e5e5e5] z-40 overflow-y-auto">
+            <div className="max-w-7xl mx-auto px-4 py-6 space-y-2 pb-8">
+              {/* Visible brand/header for mobile menu */}
+              <div className="flex items-center justify-center mb-4">
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  <span className="block text-black font-serif text-xl font-bold">
+                    Acoperiș la Gata
+                  </span>
+                </Link>
+              </div>
+              {navigation.map((item) => (
+                <GTMLink
+                  key={item.name}
+                  href={item.href}
+                  gtmLabel={`mobile_${item.name}`}
+                  className="block px-4 py-4 text-black hover:underline underline-offset-4 rounded-md transition-colors text-base font-medium"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </GTMLink>
+              ))}
+              <div className="pt-6 border-t border-[#d1d5db] mt-4">
+                <GTMButton
+                  gtmLabel="mobile_cta_contact"
+                  className="w-full bg-[#d1d5db] text-black py-4 text-base font-medium"
+                  asChild
+                >
+                  <a href="tel:+40759614930">Sună Acum: +40 759 614 930</a>
+                </GTMButton>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </nav>
     </header>
   );
