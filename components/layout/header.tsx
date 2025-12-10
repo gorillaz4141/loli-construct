@@ -1,11 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { GTMLink } from "@/components/ui/gtm-link";
-import { GTMButton } from "@/components/ui/gtm-button";
-import { cn } from "@/lib/utils";
+
+// Simple Hamburger Icon as JSX (3 horizontal lines)
+function HamburgerIcon({ open }: { open: boolean }) {
+  return (
+    <div
+      className="flex flex-col justify-center w-8 h-8 cursor-pointer"
+      aria-label={open ? "Închide meniul" : "Deschide meniul"}
+      tabIndex={0}
+      role="button"
+    >
+      <span
+        className={`block h-1 w-8 rounded bg-black transition-all duration-200 ${
+          open ? "rotate-45 translate-y-[10px]" : ""
+        }`}
+      ></span>
+      <span
+        className={`block h-1 w-8 rounded bg-black my-1 transition-all duration-200 ${
+          open ? "opacity-0" : ""
+        }`}
+      ></span>
+      <span
+        className={`block h-1 w-8 rounded bg-black transition-all duration-200 ${
+          open ? "-rotate-45 -translate-y-[10px]" : ""
+        }`}
+      ></span>
+    </div>
+  );
+}
 
 const navigation = [
   { name: "Acasă", href: "/" },
@@ -17,141 +41,64 @@ const navigation = [
 ];
 
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Close menu when clicking outside or on a link
-  useEffect(() => {
-    if (isOpen) {
-      const handleClickOutside = (event: MouseEvent) => {
-        const target = event.target as HTMLElement;
-        if (!target.closest("nav")) {
-          setIsOpen(false);
-        }
-      };
-      document.addEventListener("click", handleClickOutside);
-      return () => document.removeEventListener("click", handleClickOutside);
-    }
-  }, [isOpen]);
-
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
+  // Close menu on navigation
+  function handleNavClick() {
+    setMenuOpen(false);
+  }
 
   return (
-    <header className="sticky top-0 left-0 right-0 z-50 bg-[#e5e5e5] shadow-sm">
-      <nav className="max-w-7xl mx-auto px-4">
-        {/* Main Navigation Bar */}
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-3"
-            onClick={() => setIsOpen(false)}
-          >
-            <div className="hidden sm:block">
-              <span className="text-black font-serif text-xl font-bold">
-                Acoperiș la Gata
-              </span>
-              <p className="text-xs text-black/80">
-                Servicii Complete Acoperișuri
-              </p>
-            </div>
-            <div className="block sm:hidden">
-              <span className="text-black font-serif text-lg font-bold">
-                Acoperiș la Gata
-              </span>
-            </div>
-          </Link>
+    <header className="fixed top-0 left-0 right-0 w-full z-50 bg-[#e5e5e5] shadow-sm border-b border-[#d1d5db]">
+      <nav className="flex flex-col md:flex-row items-center justify-between max-w-7xl mx-auto px-4 py-2 relative">
+        {/* Logo / Brand */}
+        <Link href="/" className="flex items-center gap-2 py-1 z-10">
+          <span className="text-black font-serif text-xl md:text-2xl font-bold">
+            Acoperiș la Gata
+          </span>
+          <span className="hidden sm:inline text-xs text-black/80 pl-2">
+            Servicii Complete Acoperișuri
+          </span>
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-1">
-            {navigation.map((item) => (
-              <GTMLink
-                key={item.name}
-                href={item.href}
-                gtmLabel={item.name}
-                className="px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 text-black hover:underline underline-offset-4"
-              >
-                {item.name}
-              </GTMLink>
-            ))}
-          </div>
+        {/* Hamburger for mobile */}
+        <button
+          className="md:hidden flex items-center ml-auto z-20 focus:outline-none"
+          aria-label={menuOpen ? "Închide meniul" : "Deschide meniul"}
+          onClick={() => setMenuOpen((v) => !v)}
+          type="button"
+        >
+          <HamburgerIcon open={menuOpen} />
+        </button>
 
-          {/* Desktop CTA Button */}
-
-          {/* Mobile Menu Button */}
-          {mounted && (
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsOpen(!isOpen);
-              }}
-              className="lg:hidden p-2 rounded-md text-black hover:bg-black/10 transition-colors"
-              aria-label="Toggle menu"
-              aria-expanded={isOpen}
-              data-gtm-event="click"
-              data-gtm-category="Navigation"
-              data-gtm-action="mobile_menu_toggle"
+        {/* Navigation */}
+        <div
+          className={`
+            flex-col
+            md:flex md:flex-row md:static md:mt-0
+            fixed top-0 left-0 right-0 bg-[#e5e5e5]
+            transition-all duration-300
+            ${menuOpen ? "flex" : "hidden"}
+            items-center
+            justify-center
+            gap-2 px-4 py-8 mt-14 shadow-lg
+            md:shadow-none md:py-0 md:bg-transparent
+            md:relative md:w-auto
+            w-full
+            z-10
+          `}
+        >
+          {navigation.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className="px-3 py-2 rounded-md text-sm font-medium text-black transition-colors hover:bg-black/10 active:bg-black/20 cursor-pointer"
+              onClick={handleNavClick}
             >
-              {isOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          )}
+              {item.name}
+            </Link>
+          ))}
         </div>
-
-        {/* Mobile Navigation Menu - Full Screen Overlay */}
-        {isOpen && mounted && (
-          <div
-            className="lg:hidden fixed inset-0 bg-[#e5e5e5] z-40 overflow-y-auto"
-            style={{ height: "100vh", top: 0 }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="max-w-7xl mx-auto px-4 py-6 h-full flex flex-col">
-              {/* Mobile Menu Content */}
-              <div className="flex-1 space-y-1 flex flex-col">
-                {/* Brand Header */}
-                <div className="flex items-center justify-center mb-6 pb-4 border-b border-[#d1d5db]">
-                  <Link href="/" onClick={() => setIsOpen(false)}>
-                    <span className="text-black font-serif text-xl font-bold">
-                      Acoperiș la Gata
-                    </span>
-                  </Link>
-                </div>
-
-                {/* Navigation Links */}
-                {navigation.map((item) => (
-                  <GTMLink
-                    key={item.name}
-                    href={item.href}
-                    gtmLabel={`mobile_${item.name}`}
-                    className="block px-4 py-4 text-black hover:bg-black/5 rounded-md transition-colors text-base font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.name}
-                  </GTMLink>
-                ))}
-
-                {/* CTA Button */}
-              </div>
-            </div>
-          </div>
-        )}
       </nav>
     </header>
   );
