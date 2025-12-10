@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CookieConsent } from "@/components/layout/cookie-consent";
+import { FloatingButtons } from "@/components/layout/floating-buttons";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -178,6 +179,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <CookieConsent />
+        <FloatingButtons />
         <Analytics />
       </body>
     </html>
